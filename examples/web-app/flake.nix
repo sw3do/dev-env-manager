@@ -26,18 +26,18 @@
           ];
           
           shellHook = ''
-            echo "🌐 Web Application Development Environment"
-            echo "========================================="
-            echo "Available tools:"
-            echo "  - Node.js: $(node --version)"
-            echo "  - Python: $(python --version)"
-            echo "  - PostgreSQL: $(postgres --version)"
-            echo "  - Redis: $(redis-server --version)"
-            echo ""
-            echo "Quick start:"
-            echo "  Frontend: npx create-react-app frontend"
-            echo "  Backend: pip install fastapi uvicorn"
-            echo "  Database: pg_ctl -D ./postgres-data initdb"
+            ${pkgs.coreutils}/bin/echo "🌐 Web Application Development Environment"
+            ${pkgs.coreutils}/bin/echo "========================================="
+            ${pkgs.coreutils}/bin/echo "Available tools:"
+            ${pkgs.coreutils}/bin/echo "  - Node.js: $(node --version)"
+            ${pkgs.coreutils}/bin/echo "  - Python: $(python --version)"
+            ${pkgs.coreutils}/bin/echo "  - PostgreSQL: $(postgres --version)"
+            ${pkgs.coreutils}/bin/echo "  - Redis: $(redis-server --version)"
+            ${pkgs.coreutils}/bin/echo ""
+            ${pkgs.coreutils}/bin/echo "Quick start:"
+            ${pkgs.coreutils}/bin/echo "  Frontend: npx create-react-app frontend"
+            ${pkgs.coreutils}/bin/echo "  Backend: pip install fastapi uvicorn"
+            ${pkgs.coreutils}/bin/echo "  Database: pg_ctl -D ./postgres-data initdb"
           '';
         };
       });
