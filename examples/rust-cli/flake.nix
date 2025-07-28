@@ -22,36 +22,37 @@
       {
         devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [
-            rustToolchain
-            cargo-watch
-            cargo-edit
-            cargo-audit
-            cargo-outdated
-            git
-            curl
-            wget
-            jq
-            tree
-          ];
+          rustToolchain
+          cargo-watch
+          cargo-edit
+          cargo-audit
+          cargo-outdated
+          git
+          curl
+          wget
+          jq
+          tree
+          coreutils
+        ];
           
           shellHook = ''
-            ${pkgs.coreutils}/bin/echo "🦀 Rust CLI Development Environment"
-            ${pkgs.coreutils}/bin/echo "=================================="
-            ${pkgs.coreutils}/bin/echo "Available tools:"
-            ${pkgs.coreutils}/bin/echo "  - Rust: $(rustc --version)"
-            ${pkgs.coreutils}/bin/echo "  - Cargo: $(cargo --version)"
-            ${pkgs.coreutils}/bin/echo "  - Rustfmt: $(rustfmt --version)"
-            ${pkgs.coreutils}/bin/echo "  - Clippy: $(cargo clippy --version)"
-            ${pkgs.coreutils}/bin/echo ""
-            ${pkgs.coreutils}/bin/echo "Useful commands:"
-            ${pkgs.coreutils}/bin/echo "  cargo init          # Initialize new project"
-            ${pkgs.coreutils}/bin/echo "  cargo build         # Build project"
-            ${pkgs.coreutils}/bin/echo "  cargo run           # Run project"
-            ${pkgs.coreutils}/bin/echo "  cargo test          # Run tests"
-            ${pkgs.coreutils}/bin/echo "  cargo watch -x run  # Auto-reload on changes"
-            ${pkgs.coreutils}/bin/echo "  cargo clippy        # Lint code"
-            ${pkgs.coreutils}/bin/echo "  cargo fmt           # Format code"
-          '';
+          echo "🦀 Rust CLI Development Environment"
+          echo "=================================="
+          echo "Available tools:"
+          echo "  - Rust: $(rustc --version)"
+          echo "  - Cargo: $(cargo --version)"
+          echo "  - Rustfmt: $(rustfmt --version)"
+          echo "  - Clippy: $(cargo clippy --version)"
+          echo ""
+          echo "Useful commands:"
+          echo "  cargo init          # Initialize new project"
+          echo "  cargo build         # Build project"
+          echo "  cargo run           # Run project"
+          echo "  cargo test          # Run tests"
+          echo "  cargo watch -x run  # Auto-reload on changes"
+          echo "  cargo clippy        # Lint code"
+          echo "  cargo fmt           # Format code"
+        '';
         };
       });
 }

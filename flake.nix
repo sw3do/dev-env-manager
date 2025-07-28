@@ -118,15 +118,16 @@
             wget
             jq
             tree
+            coreutils
           ];
           
           shellHook = ''
             echo "🎉 Welcome to PROJECT_NAME_PLACEHOLDER development environment!"
             echo "Available tools:"
-            echo "  - Node.js: \$(node --version)"
-            echo "  - Python: \$(python --version)"
-            echo "  - Rust: \$(rustc --version)"
-            echo "  - PostgreSQL: \$(postgres --version)"
+            echo "  - Node.js: $(node --version)"
+            echo "  - Python: $(python --version)"
+            echo "  - Rust: $(rustc --version)"
+            echo "  - PostgreSQL: $(postgres --version)"
             echo ""
             echo "Run 'dev-env-manager status' to check environment status"
             echo "Run 'dev-env-manager help' for more commands"
@@ -219,25 +220,26 @@ EOF
             wget
             jq
             tree
+            coreutils
             devEnvManager
           ];
           
           shellHook = ''
-            ${pkgs.coreutils}/bin/echo "🎉 Welcome to Development Environment Manager!"
-            ${pkgs.coreutils}/bin/echo "============================================="
-            ${pkgs.coreutils}/bin/echo "Available tools:"
-            ${pkgs.coreutils}/bin/echo "  - Node.js: $(node --version)"
-            ${pkgs.coreutils}/bin/echo "  - Python: $(python --version)"
-            ${pkgs.coreutils}/bin/echo "  - Rust: $(rustc --version)"
-            ${pkgs.coreutils}/bin/echo "  - PostgreSQL: $(postgres --version)"
-            ${pkgs.coreutils}/bin/echo ""
-            ${pkgs.coreutils}/bin/echo "CLI Tool: dev-env-manager"
-            ${pkgs.coreutils}/bin/echo "Run 'dev-env-manager help' to get started"
-            ${pkgs.coreutils}/bin/echo ""
-            ${pkgs.coreutils}/bin/echo "Example usage:"
-            ${pkgs.coreutils}/bin/echo "  dev-env-manager init my-awesome-project"
-            ${pkgs.coreutils}/bin/echo "  dev-env-manager status"
-            ${pkgs.coreutils}/bin/echo "  dev-env-manager versions"
+            echo "🎉 Welcome to Development Environment Manager!"
+            echo "============================================="
+            echo "Available tools:"
+            echo "  - Node.js: $(node --version)"
+            echo "  - Python: $(python --version)"
+            echo "  - Rust: $(rustc --version)"
+            echo "  - PostgreSQL: $(postgres --version)"
+            echo ""
+            echo "CLI Tool: dev-env-manager"
+            echo "Run 'dev-env-manager help' to get started"
+            echo ""
+            echo "Example usage:"
+            echo "  dev-env-manager init my-awesome-project"
+            echo "  dev-env-manager status"
+            echo "  dev-env-manager versions"
           '';
         };
         
